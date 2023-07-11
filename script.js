@@ -12,6 +12,7 @@ function createsTheGrid() {
 		pixel.classList.add("pixel");
 		theGrid.appendChild(pixel);
 	}
+	theGrid.style = `grid-template-columns: repeat(${numPixels}, 1fr);`;
 }
 createsTheGrid();
 
@@ -31,7 +32,7 @@ function getRandomColor() {
 	return Math.floor(Math.random() * 16777215).toString(16);
 }
 
-// const playerChoices = document.querySelectorAll(".btn-selection");
-// playerChoices.forEach((choice) =>
-// 	choice.addEventListener("click", (e) => playRound(e.target.value))
-// );
+/* reset background of the grid pixels. background-color is hardcode  */
+function resetDraw() {
+	pixels.forEach((pixel) => (pixel.style = "background-color: #212121"));
+}

@@ -12,21 +12,38 @@ body {
 }
 
 .main {
-	border: 1px solid orange;
-	padding: 20px;
 }
 
 #the-grid {
 	border: 3px solid orchid;
-	padding: 20px;
-	max-width: 320px;
-	max-height: 320px;
-	display: flex;
-	flex-wrap: wrap;
+	min-width: 600px;
+	max-width: 600px;
+	min-height: 600px;
+	max-height: 600px;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
 }
 
 .pixel {
-	padding: 9px;
 	border: 1px solid white;
 	transition: all 0.1s ease;
+	aspect-ratio: 1;
+	cursor: grab;
+}
+
+#btn-reset {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 200px;
+	background-color: orchid;
+	color: white;
+	border: 1px solid orchid;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#btn-reset:active,
+#btn-reset:hover {
+	background-color: blueviolet;
+	border: dashed 1px blueviolet;
 }
