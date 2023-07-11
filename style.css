@@ -12,8 +12,21 @@ body {
 }
 
 .main {
+	border: 1px solid orange;
+	padding: 20px;
+}
+
+#the-grid {
 	border: 3px solid orchid;
 	padding: 20px;
-	min-width: 600px;
-	min-height: 600px;
+	max-width: 320px;
+	max-height: 320px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pixel {
+	padding: 9px;
+	border: 1px solid white;
+	transition: all 0.1s ease;
 }
