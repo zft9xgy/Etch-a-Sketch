@@ -24,7 +24,8 @@ pixels.forEach((pixel) =>
 );
 
 function fillPixel(pixel) {
-	pixel.style = "background-color: white;";
+	pixel.classList.add("bg-pixel");
+	//pixel.style = "background-color: white;";
 	//pixel.style = `background-color: #${getRandomColor()};`;
 }
 
@@ -33,6 +34,9 @@ function getRandomColor() {
 }
 
 /* reset background of the grid pixels. background-color is hardcode  */
+// function resetDraw() {
+// 	pixels.forEach((pixel) => (pixel.style = "background-color: #212121"));
+// }
 function resetDraw() {
-	pixels.forEach((pixel) => (pixel.style = "background-color: #212121"));
+	pixels.forEach((pixel) => pixel.classList.remove("bg-pixel"));
 }

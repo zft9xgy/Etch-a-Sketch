@@ -47,3 +47,7 @@ body {
 	background-color: blueviolet;
 	border: dashed 1px blueviolet;
 }
+
+.bg-pixel {
+	background-color: white;
+}
