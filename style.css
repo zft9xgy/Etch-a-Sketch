@@ -26,6 +26,7 @@ body {
 
 .pixel {
 	border: 1px solid white;
+	background-color: inherit;
 	transition: all 0.1s ease;
 	aspect-ratio: 1;
 	cursor: grab;

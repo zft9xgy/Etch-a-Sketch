@@ -32,8 +32,10 @@ function addListenerToPixels() {
 	);
 }
 
-function fillPixel(pixel) {
-	pixel.classList.add("bg-pixel");
+function isRainbowMode() {
+	// comprueba el estado de un elemento UI
+	// devuelve true or false
+	return true;
 }
 
 function getRandomColor() {
@@ -43,6 +45,7 @@ function getRandomColor() {
 /* reset background of the grid pixels. background-color is hardcode  */
 function resetDraw() {
 	pixels.forEach((pixel) => pixel.classList.remove("bg-pixel"));
+	pixels.forEach((pixel) => (pixel.style = "background-color: inherit;"));
 }
 
 /* UI logic for change canva size from button that pop up an alter to prompt */
@@ -59,6 +62,15 @@ function changeCanvasSize(size) {
 	}
 
 	createsTheGrid(newSize);
+}
+
+/* las funciones que trabajan con el color son fillpixel y reset draw*/
+function fillPixel(pixel) {
+	if (isRainbowMode()) {
+		pixel.style = `background-color: #${getRandomColor()};`;
+		return;
+	}
+	pixel.classList.add("bg-pixel");
 }
 
 createsTheGrid(defaultGridSize);
