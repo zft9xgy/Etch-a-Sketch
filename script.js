@@ -32,10 +32,9 @@ function addListenerToPixels() {
 	);
 }
 
+/* get info from rainbow checkbox */
 function isRainbowMode() {
-	// comprueba el estado de un elemento UI
-	// devuelve true or false
-	return true;
+	return document.getElementById("rainbow").checked;
 }
 
 function getRandomColor() {
@@ -70,6 +69,7 @@ function fillPixel(pixel) {
 		pixel.style = `background-color: #${getRandomColor()};`;
 		return;
 	}
+	pixel.style = `background-color: none;`; // this allow paint white over rainbow
 	pixel.classList.add("bg-pixel");
 }
 
