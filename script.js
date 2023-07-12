@@ -1,31 +1,39 @@
 /* get main container */
 const theGrid = document.getElementById("the-grid");
-const numPixels = 16;
-/* pixel border = 1 px and padding = 9px so pixel is 20x20px */
-// can i get padding and border value from javascript?
-const maxDimension = numPixels * 20;
+const defaultGridSize = 16;
+var pixels = ""; // init pixels nodelist. it will be filled in createsTheGrid();
 
-function createsTheGrid() {
-	for (let i = 0; i < numPixels * numPixels; i++) {
+/* Return nodelist with all the pixels */
+function getQueryPixels() {
+	return document.querySelectorAll(".pixel");
+}
+
+function createsTheGrid(gridSize) {
+	emptyGrid();
+	for (let i = 0; i < gridSize * gridSize; i++) {
 		const pixel = document.createElement("div");
 		pixel.classList.add("pixel");
 		theGrid.appendChild(pixel);
 	}
-	theGrid.style = `grid-template-columns: repeat(${numPixels}, 1fr);`;
+	theGrid.style = `grid-template-columns: repeat(${gridSize}, 1fr);`;
+	pixels = getQueryPixels();
+	addListenerToPixels();
 }
-createsTheGrid();
+
+function emptyGrid() {
+	theGrid.innerHTML = "";
+}
 
 /* UI */
 
-const pixels = document.querySelectorAll(".pixel");
-pixels.forEach((pixel) =>
-	pixel.addEventListener("mouseover", (e) => fillPixel(e.target))
-);
+function addListenerToPixels() {
+	pixels.forEach((pixel) =>
+		pixel.addEventListener("mouseover", (e) => fillPixel(e.target))
+	);
+}
 
 function fillPixel(pixel) {
 	pixel.classList.add("bg-pixel");
-	//pixel.style = "background-color: white;";
-	//pixel.style = `background-color: #${getRandomColor()};`;
 }
 
 function getRandomColor() {
@@ -36,3 +44,21 @@ function getRandomColor() {
 function resetDraw() {
 	pixels.forEach((pixel) => pixel.classList.remove("bg-pixel"));
 }
+
+/* UI logic for change canva size from button that pop up an alter to prompt */
+
+const setSizeButton = document.getElementById("btn-set-size");
+setSizeButton.addEventListener("click", changeCanvasSize);
+
+function changeCanvasSize(size) {
+	const newSize = parseInt(prompt("Introduzca numero [1-100]: "));
+	const regValidation = /^[1-9]$|^[1-9][0-9]$|^(100)$/;
+
+	if (!regValidation.test(newSize)) {
+		return alert("ERROR. Se espera número del 1 al 100.");
+	}
+
+	createsTheGrid(newSize);
+}
+
+createsTheGrid(defaultGridSize);

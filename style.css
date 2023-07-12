@@ -31,13 +31,8 @@ body {
 	cursor: grab;
 }
 
-button {
-}
-
-#btn-reset {
-	display: block;
-	margin: 20px auto;
-	padding: 10px 200px;
+.btn {
+	padding: 10px 40px;
 	background-color: orchid;
 	color: white;
 	border: 1px solid orchid;
@@ -45,8 +40,8 @@ button {
 	cursor: pointer;
 }
 
-#btn-reset:active,
-#btn-reset:hover {
+.btn:active,
+.btn:hover {
 	background-color: blueviolet;
 	border: dashed 1px blueviolet;
 }
@@ -81,6 +76,9 @@ button {
 	background-color: white;
 }
 
-.space {
-	padding: 10px;
+.ui-game {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 }

@@ -9,14 +9,17 @@
 	<body>
 		<h1 class="title">Etch-a-Sketch</h1>
 		<div class="main">
-			<div class="space">
-				<input type="color" id="color-selector" value="#e66465" />
+			<div class="ui-game">
+				<!-- <input type="color" id="color-selector" value="#e66465" />
 				<label for="head">Color picker</label>
 				<button id="btn-white">White</button>
-				<button id="btn-rainbow">Rainbow</button>
+				<button id="btn-rainbow">Rainbow</button> -->
+				<button class="btn" id="btn-set-size">Set canvas size</button>
+				<button class="btn" id="btn-reset" onclick="resetDraw()">
+					Reset draw
+				</button>
 			</div>
 			<div id="the-grid"></div>
-			<button id="btn-reset" onclick="resetDraw()">Reset draw</button>
 		</div>
 
 		<script src="./script.js" type="text/javascript"></script>
