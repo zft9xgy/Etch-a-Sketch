@@ -31,10 +31,8 @@ body {
 	cursor: grab;
 }
 
-#btn-reset {
-	display: block;
-	margin: 20px auto;
-	padding: 10px 200px;
+.btn {
+	padding: 10px 40px;
 	background-color: orchid;
 	color: white;
 	border: 1px solid orchid;
@@ -42,8 +40,45 @@ body {
 	cursor: pointer;
 }
 
-#btn-reset:active,
-#btn-reset:hover {
+.btn:active,
+.btn:hover {
 	background-color: blueviolet;
 	border: dashed 1px blueviolet;
+}
+
+#btn-white {
+	padding: 10px 50px;
+	margin: 0px 10px;
+	background-color: white;
+	color: black;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#btn-rainbow {
+	padding: 10px 50px;
+	margin: 0px 10px;
+	background-image: linear-gradient(
+		90deg,
+		#00c0ff 0%,
+		#ffcf00 49%,
+		#fc4f4f 80%,
+		#00c0ff 100%
+	);
+	color: black;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.bg-pixel {
+	background-color: white;
+}
+
+.ui-game {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 }
