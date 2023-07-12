@@ -1,6 +1,5 @@
 /* get main container */
 const theGrid = document.getElementById("the-grid");
-
 const numPixels = 16;
 /* pixel border = 1 px and padding = 9px so pixel is 20x20px */
 // can i get padding and border value from javascript?
@@ -34,9 +33,6 @@ function getRandomColor() {
 }
 
 /* reset background of the grid pixels. background-color is hardcode  */
-// function resetDraw() {
-// 	pixels.forEach((pixel) => (pixel.style = "background-color: #212121"));
-// }
 function resetDraw() {
 	pixels.forEach((pixel) => pixel.classList.remove("bg-pixel"));
 }
